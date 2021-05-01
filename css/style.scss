@@ -1,0 +1,304 @@
+// Override Bootstrap's Sass default variables
+
+@import "bootstrap/scss/functions"; // Required
+@import "bootstrap/scss/variables"; // Required
+@import "bootstrap/scss/mixins"; // Required
+
+@import "bootstrap/scss/root"; // Required
+@import "bootstrap/scss/reboot"; // Required
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar"; // Requires nav
+@import "bootstrap/scss/close";
+@import "bootstrap/scss/modal"; // Requires transitions
+@import "bootstrap/scss/utilities";
+
+
+$white: #ffffff;
+$black: #000000;
+// $primary: #fd5825;
+// $secondary: #222;
+$primary: #17b978;
+$secondary: #232931;
+// $primary: #827397;
+// $secondary: #363062;
+// $primary: #278ea5;
+// $secondary: #071e3d;
+$textCol: #271f1f;
+
+// import fonts - font-family: 'Open Sans', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+@mixin main-font {
+  font-family: 'Nunito', sans-serif;
+}
+
+// mixing for setting button style
+@mixin hero_btn($col1, $col2, $pad1, $pad2, $bRadius) {
+  display: inline-block;
+  padding: $pad1 $pad2;
+  background-color: $col1;
+  color: $col2;
+  border-radius: $bRadius;
+  transition: all ease-in-out 0.3s;
+  border: none;
+
+  &:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25), 0 10px 7px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    transform: scale(0.95);
+  }
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @include main-font;
+  color: #000;
+  background: $white;
+  position: relative;
+}
+
+.layout_padding {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.layout_padding2 {
+  padding: 4.5rem 0;
+}
+
+.layout_padding2-top {
+  padding-top: 4.5rem;
+}
+
+.layout_padding2-bottom {
+  padding-bottom: 4.5rem;
+}
+
+.layout_padding-top {
+  padding-top: 6rem;
+}
+
+.layout_padding-bottom {
+  padding-bottom: 6rem;
+}
+
+.layout_margin-top {
+  margin-top: 6rem;
+}
+
+.layout_margin-bottom {
+  margin-bottom: 6rem;
+}
+
+.heading_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h2 {
+    position: relative;
+    font-weight: bold;
+    margin-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin-top: 1rem;
+    margin-bottom: 0;
+  }
+
+  &.heading_center {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+.btn,
+.btn:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
+/*header start*/
+.header {
+  padding: 15px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: $secondary;
+  z-index: 9;
+}
+
+.navbar-brand {
+  color: $white;
+  font-size: 1.5rem;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.navbar {
+  padding: 0;
+
+  .navbar-nav {
+    margin-left: auto;
+
+    .nav-item {
+      .nav-link {
+        padding: 0.5rem 1.6rem;
+        color: $white;
+        text-align: center;
+        border-radius: 5px;
+        transition: all 0.3s;
+
+        &:hover {
+          color: $primary;
+        }
+
+        &.active {
+          background: $primary;
+
+          &:hover {
+            color: $white;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+// nav toggler style
+.navbar .navbar-toggler {
+  padding: 0;
+  height: 42px;
+  transition: all 0.3s;
+  outline: none;
+
+  span {
+    display: block;
+    width: 35px;
+    height: 4px;
+    background-color: $white;
+    margin: 7px 0;
+    transition: all 0.3s;
+    position: relative;
+    border-radius: 5px;
+    transition: all 0.3s;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: $white;
+      top: -10px;
+      border-radius: 5px;
+      transition: all 0.3s;
+    }
+
+    &::after {
+      top: 10px;
+    }
+  }
+
+  &[aria-expanded="true"] {
+    transform: rotate(360deg);
+
+    span {
+      transform: rotate(45deg);
+
+      &::before,
+      &::after {
+        transform: rotate(90deg);
+        top: 0;
+      }
+    }
+  }
+}
+
+/*end header section*/
+
+/* slider section */
+.banner_section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 3rem 0 4.5rem 0;
+  min-height: 100vh;
+  background: $secondary;
+
+  .detail-box {
+
+    h1 {
+      font-weight: bold;
+      margin-bottom: 2rem;
+      color: $white;
+    }
+
+    p {
+      color: #fefefe;
+    }
+
+    a {
+      @include hero_btn($primary, $white, 12px, 45px, 5px);
+    }
+  }
+
+  .img-box {
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 100%;
+      max-width: 375px;
+    }
+  }
+
+
+}
+
+.banner_section-shape-devider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.banner_section-shape-devider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 85px;
+}
+
+.banner_section-shape-devider .shape-fill {
+  fill: #FFFFFF;
+}
+
+// end slider section
