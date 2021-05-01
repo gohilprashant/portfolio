@@ -369,7 +369,7 @@ a:focus {
 
     p {
       font-size: 17px;
-      margin-top: 1rem;
+      margin: 1rem 0 0 0;
     }
 
 
@@ -478,3 +478,133 @@ a:focus {
 }
 
 //  portfolio section end
+
+// experiance section start
+
+.exp_section {
+  .exp_box {
+    background: $secondary;
+    color: $white;
+    padding: 25px;
+    border-radius: 5px;
+    margin-top: 3rem;
+
+    a {
+      color: $white;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+}
+
+// experiance section end
+
+.footer-shape-devider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.footer-shape-devider svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 100px;
+  transform: rotateY(180deg);
+}
+
+.footer-shape-devider .shape-fill {
+  fill: #FFFFFF;
+}
+
+
+// footer section
+.footer {
+  color: $white;
+  padding: 15px 0;
+  position: relative;
+  background: $secondary;
+
+
+}
+
+.footer_items {
+  padding: 9rem 0 4rem 0;
+
+  a {
+    position: relative;
+  }
+
+  .row>div:nth-child(2) {
+    .item {
+      border-left: 1px solid #fff;
+      border-right: 1px solid #fff;
+    }
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 25px;
+
+
+    .img-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 5px;
+      text-align: center;
+      line-height: 65px;
+      color: $primary;
+      transition: all .3s;
+      position: relative;
+      background: $white;
+
+      i {
+        font-size: 24px;
+        position: relative;
+        z-index: 3;
+      }
+
+
+    }
+
+    p {
+      margin-top: 20px;
+      color: #fff;
+      margin-bottom: 0;
+    }
+
+    &:hover {
+      .img-box {
+        i {
+          color: $secondary;
+        }
+      }
+    }
+  }
+
+
+}
+
+
+.footer-info {
+  text-align: center;
+  p {
+    color: $white;
+    margin: 0;
+    padding-bottom: 25px;
+
+    a {
+      color: inherit;
+    }
+  }
+}
+
+// end footer section
