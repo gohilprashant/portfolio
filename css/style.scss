@@ -19,14 +19,8 @@
 
 $white: #ffffff;
 $black: #000000;
-// $primary: #fd5825;
-// $secondary: #222;
 $primary: #17b978;
 $secondary: #232931;
-// $primary: #827397;
-// $secondary: #363062;
-// $primary: #278ea5;
-// $secondary: #071e3d;
 $textCol: #271f1f;
 
 // import fonts - font-family: 'Open Sans', sans-serif;
@@ -59,6 +53,7 @@ $textCol: #271f1f;
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
 }
 
 body {
@@ -115,7 +110,6 @@ body {
 
 .section_heading {
   font-weight: bold;
-  text-align: center;
   margin: 0;
 }
 
@@ -343,3 +337,144 @@ a:focus {
 }
 
 // skills section end
+
+// section wrapper
+.section_wrapper {
+  color: $white;
+  background-color: $secondary;
+  border-radius: 45px 0 45px 0;
+}
+
+// section wrapper
+
+// about section start
+.about_section {
+  text-align: center;
+
+  .row {
+    align-items: center;
+  }
+
+  .img-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: -35px;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  .detail-box {
+
+    p {
+      font-size: 17px;
+      margin-top: 1rem;
+    }
+
+
+  }
+
+}
+
+// about section end
+
+// portfolio section start
+
+.portfolio_section {
+  .heading_container {
+    margin-bottom: 1.5rem;
+  }
+
+  .filter-menu {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 45px 0 20px 0;
+
+    li {
+      padding: 7px 25px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      margin: 5px 0;
+      color: $white;
+
+      &.active {
+        background: lighten($color: $secondary, $amount: 7);
+      }
+    }
+  }
+
+  .col-md-4 {
+    padding: 0;
+  }
+
+  .portfolio_box {
+    position: relative;
+    margin-top: 30px;
+    border-radius: 5px;
+    overflow-y: hidden;
+    border: 5px solid rgba($color: #f7f8f9, $alpha: .45);
+    background: rgba($color: #f7f8f9, $alpha: .45);
+    background-clip: content-box;
+    position: relative;
+
+    img {
+      width: 100%;
+      background-clip: border-box;
+    }
+
+    &:hover {
+      .portfolio_detail {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .portfolio_detail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background: rgba($color: $secondary, $alpha: .92);
+    padding: 20px;
+    transform: translateY(100%);
+    transition: all .2s ease-out;
+  }
+
+  .p_name {
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  .p_skills_list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      margin: 15px 15px 0 0;
+      transition: all .2s;
+      font-size: 18px;
+      padding: 5px 10px;
+      background: lighten($color: $secondary, $amount: 25);
+      border-radius: 3px;
+      font-size: 15px;
+    }
+  }
+
+  .p_type {
+    margin: 1rem 0;
+  }
+
+  .p_link {
+    @include hero_btn($primary, $white, 7px, 30px, 5px);
+  }
+}
+
+//  portfolio section end
