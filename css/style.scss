@@ -1,21 +1,20 @@
 // Override Bootstrap's Sass default variables
 
-@import "bootstrap/scss/functions"; // Required
-@import "bootstrap/scss/variables"; // Required
-@import "bootstrap/scss/mixins"; // Required
+@import 'bootstrap/scss/functions'; // Required
+@import 'bootstrap/scss/variables'; // Required
+@import 'bootstrap/scss/mixins'; // Required
 
-@import "bootstrap/scss/root"; // Required
-@import "bootstrap/scss/reboot"; // Required
-@import "bootstrap/scss/type";
-@import "bootstrap/scss/grid";
-@import "bootstrap/scss/buttons";
-@import "bootstrap/scss/transitions";
-@import "bootstrap/scss/nav";
-@import "bootstrap/scss/navbar"; // Requires nav
-@import "bootstrap/scss/close";
-@import "bootstrap/scss/modal"; // Requires transitions
-@import "bootstrap/scss/utilities";
-
+@import 'bootstrap/scss/root'; // Required
+@import 'bootstrap/scss/reboot'; // Required
+@import 'bootstrap/scss/type';
+@import 'bootstrap/scss/grid';
+@import 'bootstrap/scss/buttons';
+@import 'bootstrap/scss/transitions';
+@import 'bootstrap/scss/nav';
+@import 'bootstrap/scss/navbar'; // Requires nav
+@import 'bootstrap/scss/close';
+@import 'bootstrap/scss/modal'; // Requires transitions
+@import 'bootstrap/scss/utilities';
 
 $white: #ffffff;
 $black: #000000;
@@ -49,7 +48,6 @@ $textCol: #271f1f;
     transform: scale(0.95);
   }
 }
-
 
 html {
   scroll-behavior: smooth;
@@ -105,14 +103,12 @@ body {
     margin-top: 1rem;
     margin-bottom: 0;
   }
-
 }
 
 .section_heading {
   font-weight: bold;
   margin: 0;
 }
-
 
 a,
 a:hover,
@@ -170,7 +166,6 @@ a:focus {
           &:hover {
             color: $white;
           }
-
         }
       }
     }
@@ -197,7 +192,7 @@ a:focus {
 
     &::before,
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       height: 100%;
@@ -213,7 +208,7 @@ a:focus {
     }
   }
 
-  &[aria-expanded="true"] {
+  &[aria-expanded='true'] {
     transform: rotate(360deg);
 
     span {
@@ -241,7 +236,6 @@ a:focus {
   background: $secondary;
 
   .detail-box {
-
     h1 {
       font-weight: bold;
       margin-bottom: 2rem;
@@ -266,8 +260,6 @@ a:focus {
       max-width: 375px;
     }
   }
-
-
 }
 
 .banner_section-shape-devider {
@@ -288,7 +280,7 @@ a:focus {
 }
 
 .banner_section-shape-devider .shape-fill {
-  fill: #FFFFFF;
+  fill: #ffffff;
 }
 
 // end slider section
@@ -299,7 +291,7 @@ a:focus {
   .row {
     align-items: stretch;
 
-    >div {
+    > div {
       display: flex;
     }
   }
@@ -327,12 +319,15 @@ a:focus {
 
   li {
     margin: 15px 20px 0 0;
-    transition: all .2s;
+    transition: all 0.2s;
     font-size: 18px;
     border-left: 3px solid $primary;
     padding-left: 7px;
-    background: linear-gradient(to right, lighten($color: $secondary, $amount: 10), lighten($color: $secondary, $amount: 3));
-
+    background: linear-gradient(
+      to right,
+      lighten($color: $secondary, $amount: 10),
+      lighten($color: $secondary, $amount: 3)
+    );
   }
 }
 
@@ -366,15 +361,11 @@ a:focus {
   }
 
   .detail-box {
-
     p {
       font-size: 17px;
       margin: 1rem 0 0 0;
     }
-
-
   }
-
 }
 
 // about section end
@@ -425,8 +416,8 @@ a:focus {
     margin-top: 30px;
     border-radius: 5px;
     overflow-y: hidden;
-    border: 5px solid rgba($color: #f7f8f9, $alpha: .45);
-    background: rgba($color: #f7f8f9, $alpha: .45);
+    border: 5px solid rgba($color: #f7f8f9, $alpha: 0.45);
+    background: rgba($color: #f7f8f9, $alpha: 0.45);
     background-clip: content-box;
     position: relative;
 
@@ -449,10 +440,10 @@ a:focus {
     width: 100%;
     height: 100%;
     z-index: 3;
-    background: rgba($color: $secondary, $alpha: .92);
+    background: rgba($color: $secondary, $alpha: 0.92);
     padding: 20px;
     transform: translateY(100%);
-    transition: all .2s ease-out;
+    transition: all 0.2s ease-out;
   }
 
   .p_name {
@@ -468,7 +459,7 @@ a:focus {
 
     li {
       margin: 15px 15px 0 0;
-      transition: all .2s;
+      transition: all 0.2s;
       padding: 5px 10px;
       background: lighten($color: $secondary, $amount: 25);
       border-radius: 3px;
@@ -478,6 +469,14 @@ a:focus {
 
   .p_type {
     margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    svg {
+      width: 16px;
+      height: 16px;
+      margin-right: 0.5rem;
+      transform: translateY(-1.5px);
+    }
   }
 
   .p_link {
@@ -532,9 +531,8 @@ a:focus {
 }
 
 .footer-shape-devider .shape-fill {
-  fill: #FFFFFF;
+  fill: #ffffff;
 }
-
 
 // footer section
 .footer {
@@ -542,8 +540,6 @@ a:focus {
   padding: 15px 0;
   position: relative;
   background: $secondary;
-
-
 }
 
 .footer_items {
@@ -554,7 +550,7 @@ a:focus {
     word-break: break-all;
   }
 
-  .row>div {
+  .row > div {
     &:nth-child(2) {
       border-left: 1px solid #fff;
       border-right: 1px solid #fff;
@@ -568,7 +564,6 @@ a:focus {
     text-align: center;
     margin-top: 25px;
 
-
     .img-box {
       width: 60px;
       height: 60px;
@@ -576,7 +571,7 @@ a:focus {
       text-align: center;
       line-height: 65px;
       color: $primary;
-      transition: all .3s;
+      transition: all 0.3s;
       position: relative;
       background: $white;
 
@@ -585,8 +580,6 @@ a:focus {
         position: relative;
         z-index: 3;
       }
-
-
     }
 
     p {
@@ -603,10 +596,7 @@ a:focus {
       }
     }
   }
-
-
 }
-
 
 .footer-info {
   text-align: center;
@@ -624,7 +614,6 @@ a:focus {
 
 // end footer section
 
-
 // reponive css start
 
 @media (max-width: 991px) {
@@ -640,7 +629,7 @@ a:focus {
 }
 
 @media (max-width: 767px) {
-  .footer_items .row>div:nth-child(2) {
+  .footer_items .row > div:nth-child(2) {
     border: none;
   }
 
